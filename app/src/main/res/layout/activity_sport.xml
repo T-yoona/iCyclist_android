@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sport">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+    </com.amap.api.maps.MapView>
+
+<!--    <EditText-->
+<!--        android:id="@+id/usernameEditText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="请输入用户名"-->
+<!--        tools:ignore="MissingConstraints" />-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/captureButton"
+        android:text="截图"
+        tools:ignore="MissingConstraints">
+    </Button>
+
+    <!-- 计时器Chronometer -->
+    <Chronometer
+        android:id="@+id/timerChronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+
+    <!-- 按钮容器，用于水平排列开始和暂停按钮 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/timerChronometer"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 开始按钮 -->
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/continueButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+        <!-- 继续按钮 -->
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="继续"
+            app:layout_constraintStart_toEndOf="@+id/startButton"
+            app:layout_constraintEnd_toStartOf="@+id/pauseButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+        <!-- 暂停按钮 -->
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂停"
+            app:layout_constraintStart_toEndOf="@+id/continueButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- 底部的ConstraintLayout容器，用于水平排列按钮 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 按钮1 -->
+        <Button
+            android:id="@+id/spbutton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/spbutton2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- 按钮2 -->
+        <Button
+            android:id="@+id/spbutton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="运动"
+            app:layout_constraintStart_toEndOf="@+id/spbutton1"
+            app:layout_constraintEnd_toStartOf="@+id/spbutton3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2" />
+
+        <!-- 按钮3 -->
+        <Button
+            android:id="@+id/spbutton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="发现"
+            app:layout_constraintStart_toEndOf="@+id/spbutton2"
+            app:layout_constraintEnd_toStartOf="@+id/viewRideButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- 查看骑行轨迹按钮 -->
+        <Button
+            android:id="@+id/viewRideButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="骑行记录"
+            app:layout_constraintStart_toEndOf="@+id/spbutton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:padding="12dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 发布者用户名 -->
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+<!--        &lt;!&ndash; 骑行图片 &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/rideImageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:layout_marginTop="8dp" />-->
+        <ImageView
+            android:id="@+id/rideImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="8dp" />
+
+
+        <!-- 骑行标题 -->
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="骑行标题"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- 骑行内容 -->
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="骑行内容"
+            android:layout_marginTop="4dp" />
+
+        <!-- 骑行数据 (距离和时长) -->
+        <TextView
+            android:id="@+id/statsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="距离: 10公里 | 时长: 30分钟"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="#888888" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

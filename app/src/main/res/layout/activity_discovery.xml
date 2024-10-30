@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".discovery">
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discoveryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 添加内容的按钮 -->
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="发布"
+        app:layout_constraintTop_toBottomOf="@id/discoveryRecyclerView"
+        app:layout_constraintBottom_toTopOf="@id/button_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 底部的ConstraintLayout容器，用于水平排列按钮 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 按钮1 -->
+        <Button
+            android:id="@+id/disbutton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/disbutton2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- 按钮2 -->
+        <Button
+            android:id="@+id/disbutton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="运动"
+            app:layout_constraintStart_toEndOf="@+id/disbutton1"
+            app:layout_constraintEnd_toStartOf="@+id/disbutton3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="2" />
+
+        <!-- 按钮3 -->
+        <Button
+            android:id="@+id/disbutton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="发现"
+            app:layout_constraintStart_toEndOf="@+id/disbutton2"
+            app:layout_constraintEnd_toStartOf="@+id/disbutton4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- 查看骑行轨迹按钮 -->
+        <Button
+            android:id="@+id/disbutton4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="骑行记录"
+            app:layout_constraintStart_toEndOf="@+id/disbutton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

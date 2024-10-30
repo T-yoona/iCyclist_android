@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布骑行动态"
+            android:textSize="24sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 图片上传按钮 -->
+        <Button
+            android:id="@+id/uploadImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传图片"
+            android:layout_marginBottom="8dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+
+        <!-- 骑行距离和时长 -->
+        <TextView
+            android:id="@+id/rideStatsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="骑行距离：0公里 | 时长：00:00:00"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp" />
+
+        <!-- 标题输入 -->
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入标题"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 内容输入 -->
+        <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入内容"
+            android:minLines="4"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 发布按钮 -->
+        <Button
+            android:id="@+id/postButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布" />
+    </LinearLayout>
+
+</ScrollView>
